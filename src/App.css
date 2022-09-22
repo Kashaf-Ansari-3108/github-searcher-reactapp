@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body{
+  font-family: 'Poppins', sans-serif;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #ade5f9;
+  min-height: 100vh;
 }
-
-.App-link {
-  color: #61dafb;
+img{
+  max-width: 100%;
+  display: block;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul{
+  list-style: none;
+}
+.card::after, .card img{
+  border-radius: 50%;
+}
+body, .card, .stats{
+  display: flex;
+}
+.card{
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .5);
+  max-width: 500px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .15);
+  margin: 1rem;
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.card::before, .card::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+.card::before{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  top: -0.7rem;
+  left: -0.7rem;
+}
+.card::after{
+  height: 15rem;
+  width: 15rem;
+  background-color: #4172f5aa;
+  top: -8rem;right: -8rem;
+  box-shadow: 2rem 6rem 0 -3rem #fff;
+}
+.card img{
+  width: 8rem;
+  min-width: 80px;
+  box-shadow: 0 0 0 5px #fff;
+}
+.infos{
+  margin-left: 1.5rem;
+}
+.name{
+  margin-bottom: 1rem;
+}
+.name h2{
+  font-size: 1.3rem;
+}
+.name h4{
+  font-size: .8rem;
+  color: #333;
+}
+.text{
+  font-size: .9rem;
+  margin-bottom: 1rem;
+}
+.stats{
+  margin-bottom: 1rem;
+}
+.stats li{
+  min-width: 5rem;
+}
+.stats li h3{
+  font-size: .99rem;
+}
+.stats li h4{
+  font-size: .75rem;
+}
+.links button{
+  font-family: 'Poppins', sans-serif;
+  min-width: 120px;
+  padding: 0.5rem;
+  border: 1ox solid #222;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .25s linear;
+}
+.links .follow, .links .view:hover{
+  background-color: #222;
+  color: #fff;
+}
+.links .view, .links .follow:hover{
+  background-color: transparent;
+  color: #222;
+}
+@media (max-width: 450px) {
+  .card{
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .infos{
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+  .links button{
+    min-width: 100px;
+  }
+}
+
+.inputContainer{
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 50px 30px;   
+}
+
+input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font: 15px/1 'Open Sans', sans-serif;
+  color: rgb(244, 242, 242);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 500px;
+  background-color: #4172f5aa;
+  border: none;
+  padding: 10px 11px 11px 11px;
+  border-radius: 3px;
+  box-shadow: none;
+  outline: none;
+  margin: 0;
+  box-sizing: border-box; 
+   background-image: url('./assests/search.png');
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  background-size: 30px;
+  
+}
+::-webkit-input-placeholder { 
+  color: rgb(253, 252, 252);
+}
+input:focus {
+  border: 3px solid #555;
+}
+
+.error{
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background-image: url(./assests/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.error{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+.cartoon{
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+}
+.errorText{
+  width:200px ;
+  height: 300px;
+  padding: 20px;
+}
+@media only-screen and (max-width:500px){
+  .cartoon,.errorText{
+    
   }
 }
